@@ -35,9 +35,6 @@ $container['logger'] = function ($c) {
 };
 
 // -----------------------------------------------------------------------------
-// Action factories
+// Action factories - created via an AbstractFactory
 // -----------------------------------------------------------------------------
-
-$container['App\Action\HomeAction'] = function ($c) {
-    return new App\Action\HomeAction($c['view'], $c['logger']);
-};
+$container->addAbstractFactory(new App\ActionAbstractFactory());
